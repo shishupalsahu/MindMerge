@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'CSS/profilepage.css' %}">
+    
+{% endblock css %}
+    
+
+{% block main %}
+
+    <nav>
+        <a href="{% url 'home' %}" id="backbutton"><i class="fa-solid fa-circle-arrow-left"></i></a> 
+    </nav>
+
+    <main>
+
+        {% if request.user.is_authenticated %}
+            <fieldset id="userdetails">
+                <legend>My Details</legend>
+                <p>Full Name  :  {{ request.user.first_name}} {{ request.user.last_name}}</p>
+                <p>User name  :  {{ request.user.username }} </p>
+                <p>email  :  {{ request.user.email }} </p>
+
+                <div id="logoutoredit">
+                    <a href="{% url 'edituser' request.user.id %}" id="edituser"><i class="fa-solid fa-user-pen"></i></a>
+                    <a href="{% url 'userlogout' %}" id="logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            
+            </fieldset>
+        {% else %}
+            <a href="{% url 'userlogin' %}">Login</a>
+        {% endif %}
+
+
+        <div id="postscontainer">
+
+             {% for post in posts reversed %}
+
+            <div id="container">
+
+                <div id="posthead">
+                    <a href="{% url 'userprofile' post.user_id.id %}" id="postheadurl">
+                    <div id="userprofile"><button id="profilebutton"> {{ post.user_id.username.0 }} </button></div></a>
+                    <a href="{% url 'userprofile' post.user_id.id %}" id="postheadurl"><p id="postusername">{{ post.user_id }}</p></a>
+                    <p id="uploadtime">{{ post.uploaded_at}}</p>
+                </div>
+                <div id="postmain">
+                    <div id="posttitle"><h4>{{ post.title }}</h4></div>
+                    <div id="postimage">
+                        {% if post.image %}
+                            <a href="{{ post.image.url }}" target="_blank">
+                                {% if post.image.url|lower|slice:"-4:" == ".mp4" or post.image.url|lower|slice:"-5:" == ".webm" or post.image.url|lower|slice:"-4:" == ".ogg" %}
+                                    <video controls id="postimagemain" style="max-width:100%;height:auto;">
+                                        <source src="{{ post.image.url }}">
+                                        Your browser does not support this video.
+                                    </video>
+                                {% else %}
+                                    <img src="{{ post.image.url }}" alt="Post Image" id="postimagemain">
+                                {% endif %}
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div id="postfoot">
+                    <p id="postdesc"><b>Description : </b>{{ post.description }}</p>
+                    <div id="ideadocument">
+                        {% if post.document %}
+                            <a href="{{ post.document.url }}" id="projectdoclink">View Project Documents</a>
+                        {% else %}
+                            <p id="projectdoclink">No Documnets Available</p>
+                        {% endif %}
+                    </div>
+
+                    <div id="postreview">
+                        <a href="{% url 'review' post.id %}">Review the Idea/Project</a>
+                    </div>
+
+                    <div id="editbutton">
+                        <a href="{% url 'editpost' post.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="{% url 'deletepost' post.id %}"><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        
+        
+        {% endfor %}
+
+        </div>
+
+    </main>
+    
+
+{% endblock main %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'CSS/userlogin.css' %}">
+{% endblock css %}
+    
+
+{% block main %}
+
+    <nav><a href="{% url 'home' %}" id="backbutton"><i class="fa-solid fa-circle-arrow-left"></i></a></nav>
+    <main>
+
+        <form action="" method="post" id="register">
+        {% csrf_token %}
+
+        <h2>Login</h2>
+        
+        <div class="inputfield">
+            USERNAME : {{ form.username }}
+        </div>
+
+        <div class="inputfield">
+            PASSWORD : {{ form.password }}
+        </div>
+
+        <button type="submit">Login</button>
+        <p>Don't have an Account : <a href="{% url 'userregister' %}">Register</a></p>
+
+        </form>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    </main>
+    
+
+{% endblock main %}

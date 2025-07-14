@@ -1,0 +1,12 @@
+Package             Version
+------------------- ---------
+asgiref             3.8.1
+certifi             2025.4.26
+Django              5.2.1
+idna                3.10
+pillow              11.2.1
+pip                 25.1.1
+requests            2.32.4
+sqlparse            0.5.3
+tzdata              2025.2
+urllib3             2.4.0

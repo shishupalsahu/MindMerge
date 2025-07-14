@@ -1,0 +1,75 @@
+body{
+background: linear-gradient(135deg, #dbeafe, #90c2e4);
+
+}
+main{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#register{
+    border-radius: 7px;
+    padding: 40px;
+    width: 450px;
+    border: 1px solid rgba(205, 202, 202, 0.475);
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(119, 119, 211, 0.2) 0px 7px 29px 0px;
+    background-color:#ffffff6e;
+}
+
+#register>button{
+    padding: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: white;
+    background-color: rgb(0, 51, 128);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    box-shadow: rgba(255, 254, 254, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+}
+#register > button:hover {
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+}
+
+#register>p>a{
+    text-decoration: none;
+    color: rgb(0, 51, 128);
+    font-size: 17px;
+    font-weight: 550;
+    
+}
+
+.inputfield{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+
+input{
+    height: 30px;
+    width: 280px;
+    padding-left: 15px;
+    border-radius: 4px;
+    border: 1px solid gray;
+ 
+}
+#register:hover {
+    transform: scale(1.01);
+}
+input:focus{
+    outline: none;
+    border: 1px solid green;
+        box-shadow: 0 0 8px rgba(79, 172, 254, 0.4);
+
+}

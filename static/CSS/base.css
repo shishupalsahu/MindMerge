@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    height: 9vh;
+    background: rgb(255, 68, 0);
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    align-items:center;
+    justify-content: left;
+    box-shadow: rgba(176, 175, 175, 0.35) 0px -50px 36px -28px inset;
+}
+
+#backbutton{
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+#backbutton>i{
+    border-radius: 50%;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    transition: all 0.25s ease;
+}
+
+#backbutton>i:hover{
+    scale: 1.2;
+    box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 70px 4px;
+}
+
+
+#sitelogo{
+    flex-basis: 40%;
+
+}
+
+#menubar{
+    align-items: center;
+    flex-basis: 60%;
+    display: flex;
+    gap: 30px;
+    justify-content: right;
+    padding-right: 30px;
+
+}
+
+.menuitems{
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+
+}
+
+
+#mainprofile{
+    height : 35px;
+    width: 35px;
+    background: rgb(224, 231, 166);
+    color: red;
+    border-radius: 50%;
+    border: 1px solid blueviolet;
+    font-size:x-large;
+    font-weight: 700;
+    font-family:Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    padding: 50px;
+    display:flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+#container{
+    /* border: 1px solid gray; */
+    border-radius: 10px;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    background-color: white;
+    height: auto;
+    width: 350px;
+    transition: all 0.25s ease;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset,rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; 
+}
+
+#container:hover{
+    scale: 1.01;
+}
+
+#posthead{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px;
+
+}
+
+#uploadtime{
+    font-size: 12px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+#profilebutton{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 2px solid rgb(38, 0, 255);
+}
+
+#postusername{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+
+#postmain{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#posttitle{
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(1, 33, 61);
+    padding: 5px;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+}
+
+#postimage{
+    height: 214px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#postimagemain{
+    height: 195px;
+    width: 300px;
+}
+
+#postfoot{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#postdesc {
+    padding: 10px;
+    height: 50px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+#postdesc:hover {
+    height: auto;
+}
+
+
+#ideadocument{
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#projectdoclink{
+    text-decoration: none;
+    color: rgb(117, 0, 0);
+    font-size: medium;
+}
+
+#projectdoclink:hover{
+    text-decoration:underline;
+}
+
+
+#postheadurl{
+    text-decoration: none;
+}
+
+#postreview{
+    padding: 10px;
+    border-radius: 8px;
+    background-color: orangered;
+    box-shadow: rgba(164, 162, 162, 0.35) 0px -50px 36px -28px inset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#postreview>a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+#editbutton{
+    padding-top: 15px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items:center;
+    justify-content: right;
+    padding-right: 40px;
+    font-size: 18px;
+    gap: 30px;
+}
+
+#editbutton>a{
+    text-decoration: none;
+    color:black;
+}
+
+#editbutton>a:hover{
+    text-decoration:underline;
+}
+

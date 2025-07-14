@@ -1,0 +1,129 @@
+#reviewpage{
+    /* border: 12px solid rgb(12, 15, 12); */
+    display: flex;
+    padding: 20px;
+    flex-direction: row;
+    align-items:start /* Ensure children stretch to same height */
+    /* min-height:91vh; */
+}
+
+
+#asideone{
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    flex-basis: 50%;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#posthead{
+    width: 100%;
+    display: flex;
+    padding-left: 60px;
+    padding-right: 60px;
+
+}
+
+
+#postimagemain{
+    width: 450px;
+}
+
+#postdesc {
+    padding: 10px;
+    height: auto;
+    transition: all 0.5s ease;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+#container{
+    scale: 1.1;
+}
+
+#container:hover{
+    scale: 1.1;
+}
+
+#asidetwo{
+    /* border: 1px solid black; */
+    /* min-height: 85vh; */
+    min-height: 90vh;
+    /* border: 2px solid black; */
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    justify-content: start;
+    padding-bottom: 30px;
+    height: 100%;
+    gap: 15px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    width: 450px;
+    gap: 10px;
+}
+
+form>button{
+    padding: 8px;
+    color: white;
+    background: green;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+}
+
+#singlereview{
+    width: 450px;
+    padding: 10px;
+    /* border: 1px solid grey; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.25s ease;
+}
+
+#singlereview:hover{
+    scale: 1.05;
+}
+
+#id_review{
+    padding: 10px;
+    height: 60px;
+    width: 450px;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#userprofile{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#mainreview{
+    font-size: 15px;
+}
+
+
+#deletereviewicon{
+    padding-left: 400px;
+    color: red;
+}

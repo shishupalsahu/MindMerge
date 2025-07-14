@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'CSS/addpost.css' %}">
+    
+{% endblock css %}
+    
+
+{% block main %}
+
+    <nav>
+        <a href="{% url 'home' %}" id="backbutton"><i class="fa-solid fa-circle-arrow-left"></i></a> 
+    </nav>
+
+    <main>
+
+        <form action="" method="post" enctype="multipart/form-data" id="postform">
+
+            {% csrf_token %}
+
+            {{ form.user_id }}
+
+            <div class="inputfield">
+                <p class="inputhead"> Title </p>
+                {{ form.title }} 
+            </div>
+
+            <div class="inputfield">
+                <p class="inputhead"> Description </p>
+                {{ form.description }}
+            </div>
+
+            <div class="inputfield">
+                <p class="inputhead"> Image/Video </p>
+                {{ form.image }}
+            </div>
+
+            <div class="inputfield">
+                <p class="inputhead"> Documents <em style="font-size: 14px;font-weight: 300;"> - pdf or .txt files</em> </p>
+                {{ form.document }}
+            </div>
+
+            <button type="submit" id="formsubmit">Submit</button>
+
+        </form>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+    </main>
+    
+
+{% endblock main %}

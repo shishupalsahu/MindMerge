@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'CSS/searchpage.css' %}">
+    
+{% endblock css %}
+    
+
+{% block main %}
+
+    <nav>
+        <a href="javascript:history.back()" id="backbutton"><i class="fa-solid fa-circle-arrow-left"></i></a>   
+    </nav>
+
+    <main>
+        <form id="searchbar" method="get">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search by UserName" id="username" name="username">
+        </form>
+        <div id="searchresults">
+
+            
+            {% if results and results|length > 0 %}
+                
+            {% for user in results %}
+                {% if user.username %}
+
+                <a href="{% url 'userprofile' user.id %}" id="postheadurl">
+                <div id="resultuser">
+                        <div id="userprofile"><button id="profilebutton"> {{ user.username|first }} </button></div>
+                    <div id="searchname">
+                        <p id="postusername">{{ user.username }}</p>
+                        <p id="searchfullname"> - {{ user.first_name }} {{user.last_name}}</p>
+                    </div>
+        
+                </div>
+                </a>
+                {% endif %}
+            {% endfor %}
+
+            {% else %}
+
+            <h3>{{ result }}</h3>
+
+            {% endif %}
+                
+
+        </div>
+    </main>
+    
+{% endblock main %}

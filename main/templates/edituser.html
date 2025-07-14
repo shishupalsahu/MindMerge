@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'CSS/userlogin.css' %}">
+    
+{% endblock css %}
+    
+
+{% block main %}
+
+    <nav>
+        <a href="javascript:history.back()" id="backbutton"><i class="fa-solid fa-circle-arrow-left"></i></a>
+    </nav>
+    <main>
+
+        <form action="" method="post" id="register">
+        {% csrf_token %}
+
+        <div class="inputfield">
+            FIRSTNAME : {{ form.first_name }}
+        </div>
+
+        <div class="inputfield">
+            LASTNAME : {{ form.last_name }}
+        </div>
+        
+        <div class="inputfield">
+            USERNAME : {{ form.username }}
+        </div>
+
+        <div class="inputfield">
+            EMAIL : {{ form.email }}
+        </div>
+
+        <button type="submit">Save Changes</button>
+
+        </form>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    </main>
+    
+
+{% endblock main %}

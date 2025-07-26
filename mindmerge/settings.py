@@ -24,26 +24,18 @@ SECRET_KEY = 'django-insecure-^-x1dld#+8cxk!(+d8q+t0yh)@l73qzn1y_v14sj+p6x#)y^qd
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-# DEBUG = os.environ.get('RENDER', '') != 'True'
+DEBUG = os.environ.get('RENDER', '') != 'True'
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+# This handles the production host dynamically
+if os.environ.get('RENDER'):
+    ALLOWED_HOSTS.append(os.environ.get('RENDER_EXTERNAL_HOSTNAME'))
+
+# Fallback in case RENDER_EXTERNAL_HOSTNAME doesn't work
+ALLOWED_HOSTS.append('mindmerge.onrender.com')
 
 # ALLOWED_HOSTS = ['192.168.126.143','127.0.0.1','mindmerge.onrender.com']
-# ALLOWED_HOSTS = ['.onrender.com']
-# ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mindmerge.onrender.com']
-# ALLOWED_HOSTS = ['mindmerge.onrender.com']
-# settings.py
-
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
-
-ALLOWED_HOSTS = [
-    'mindmerge.onrender.com',
-    'localhost',
-    '127.0.0.1',
-]
-
-# Render-specific host detection
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 

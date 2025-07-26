@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,9 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^-x1dld#+8cxk!(+d8q+t0yh)@l73qzn1y_v14sj+p6x#)y^qd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = os.environ.get('RENDER', '') != 'True'
 
-ALLOWED_HOSTS = ['192.168.126.143','127.0.0.1']
+# ALLOWED_HOSTS = ['192.168.126.143','127.0.0.1']
+# ALLOWED_HOSTS = ['.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mindmerge.onrender.com']
 
 
 # Application definition

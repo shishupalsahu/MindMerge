@@ -26,10 +26,16 @@ SECRET_KEY = 'django-insecure-^-x1dld#+8cxk!(+d8q+t0yh)@l73qzn1y_v14sj+p6x#)y^qd
 # DEBUG = True
 DEBUG = os.environ.get('RENDER', '') != 'True'
 
-ALLOWED_HOSTS = ['192.168.126.143','127.0.0.1','mindmerge.onrender.com']
+# ALLOWED_HOSTS = ['192.168.126.143','127.0.0.1','mindmerge.onrender.com']
 # ALLOWED_HOSTS = ['.onrender.com']
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mindmerge.onrender.com']
 # ALLOWED_HOSTS = ['mindmerge.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+# Automatically allow Render.com hostname
+external_hostname = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if external_hostname:
+    ALLOWED_HOSTS.append(external_hostname)
 
 
 # Application definition

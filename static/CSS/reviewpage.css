@@ -4,7 +4,8 @@
     padding: 20px;
     flex-direction: row;
     align-items:start /* Ensure children stretch to same height */
-    /* min-height:91vh; */
+    /* min-height:91vh; make ui more creative  */
+    
 }
 
 

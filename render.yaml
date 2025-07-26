@@ -4,7 +4,7 @@ services:
     env: python
     plan: free
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn mindmerge.wsgi:application"
+    startCommand: "gunicorn ideasharingsite.wsgi:application"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: mindmerge.settings

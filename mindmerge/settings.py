@@ -28,7 +28,8 @@ DEBUG = os.environ.get('RENDER', '') != 'True'
 
 # ALLOWED_HOSTS = ['192.168.126.143','127.0.0.1']
 # ALLOWED_HOSTS = ['.onrender.com']
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mindmerge.onrender.com']
+# ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mindmerge.onrender.com']
+ALLOWED_HOSTS = ['mindmerge.onrender.com']
 
 
 # Application definition

@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: mindmerge
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn mindmerge.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: mindmerge.settings
+      - key: SECRET_KEY
+        value: 'django-insecure-^-x1dld#+8cxk!(+d8q+t0yh)@l73qzn1y_v14sj+p6x#)y^qd'
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mindmerge-db
+          property: connectionString
+
+databases:
+  - name: mindmerge-db
+    plan: free
